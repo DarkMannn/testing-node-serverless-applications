@@ -1,0 +1,1 @@
+const stubbedSqsMessage = { Records: [{ body: {} }] };
