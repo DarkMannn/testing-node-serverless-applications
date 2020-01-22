@@ -1,0 +1,21 @@
+{
+  "name": "testing-serverless-applications-aws-lambda",
+  "version": "1.0.0",
+  "description": "Repo made for the article 'Testing Node Serverless Applications - AWS Lambda functions'",
+  "main": "lambda.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "dependencies": {
+    "@hapi/joi": "^17.1.0",
+    "aws-sdk": "^2.608.0",
+    "jest": "^25.1.0",
+    "sharp": "^0.24.0"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "DarkMannn",
+  "license": "MIT"
+}
