@@ -1,0 +1,101 @@
+{
+  "_instructions_": "Copy one of the next objects in AWS Lambda Console to create a live test",
+  "digests":
+  {
+    "dueDigestTest-copyObject":
+    {
+      "Records":
+      [
+        {
+          "body":
+          {
+            "to": "awesome@mail.com",
+            "emailType": "due",
+            "data": {
+              "userName": "AwesomeUser",
+              "teamName": "AwesomeTeam",
+              "teamLink": "someLink",
+              "unsubscribeLink": "someLink",
+              "timeSpan": 2,
+              "frequencyType": "daily",
+              "itemsCount": 4,
+              "locationLinkSpecific": "first placeholder",
+              "locationLinkAll": "report link"
+            }
+          }
+        }
+      ]
+    },
+    "expiringDigestTest-copyObject":
+    {
+      "Records":
+      [
+        {
+          "body":
+          {
+            "to": "awesome@mail.com",
+            "emailType": "expiring",
+            "data": {
+              "userName": "AwesomeUser",
+              "teamName": "AwesomeTeam",
+              "teamLink": "someLink",
+              "unsubscribeLink": "someLink",
+              "timeSpan": 2,
+              "frequencyType": "daily",
+              "itemsCount": 4,
+              "locationLinkSpecific": "first placeholder",
+              "locationLinkAll": "report link"
+            }
+          }
+        }
+      ]
+    },
+    "signatureQueueDigestTest-copyObject":
+    {
+      "Records":
+      [
+        {
+          "body":
+          {
+            "to": "awesome@mail.com",
+            "emailType": "signatureQueue",
+            "data": {
+              "userName": "AwesomeUser",
+              "teamName": "AwesomeTeam",
+              "teamLink": "someLink",
+              "unsubscribeLink": "someLink",
+              "timeSpan": 2,
+              "frequencyType": "weekly",
+              "itemsCount": 4,
+              "locationLinkSpecific": "first placeholder",
+              "locationLinkAll": "report link"
+            }
+          }
+        }
+      ]
+    },
+    "taskQueueDigestTest-copyObject":
+    {
+      "Records":
+      [
+        {
+          "body":
+          {
+            "to": "awesome@mail.com",
+            "emailType": "taskQueue",
+            "data": {
+              "userName": "AwesomeUser",
+              "teamName": "AwesomeTeam",
+              "teamLink": "someLink",
+              "unsubscribeLink": "someLink",
+              "timeSpan": 2,
+              "frequencyType": "monthly",
+              "itemsCount": 4,
+              "locationLinkSpecific": "first placeholder"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
