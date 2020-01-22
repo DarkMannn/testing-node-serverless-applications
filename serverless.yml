@@ -1,0 +1,36 @@
+service: ${env:SERVICE_NAME}
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stackName: ${env:SERVICE_NAME}
+  stage: ${env:NODE_ENV}
+  memorySize: 512
+  timeout: 10
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - sqs:ReceiveMessage
+        - sqs:DeleteMessage
+      Resource: ${env:SQS_QUEUE_ARN}
+    - Effect: Allow
+      Action:
+       - s3:GetObject
+       - s3:PutObject
+      Resource: ${env:S3_BUCKET_ARN}
+
+package:
+  exclude:
+    - .gitignore
+    - .git/**
+    - serverless.yml
+    - package.json
+    - test/**
+
+functions:
+  image-reducer-service:
+    handler: lambda.handler
+    events:
+      - sqs:
+          arn: ${env:SQS_QUEUE_ARN}
+          batchSize: 1
