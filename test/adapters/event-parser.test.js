@@ -1,4 +1,4 @@
-const EventParser = require('../adapters/event-parser.js');
+const EventParser = require('../../adapters/event-parser.js');
 const createStubbedSqsMessage = (payload) => ({ Records: [{ body: payload }] });
 
 describe('EventParser.parse() ', () => {

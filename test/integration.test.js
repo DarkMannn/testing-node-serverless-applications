@@ -1,9 +1,10 @@
-require('dot-env').config();
+require('dotenv').config();
 
-const { EventParser, FileService, ImageReducer }= require('../adapters');
-const ImageReducerService = require('../main.js');
+const { EventParser, FileService, ImageReducer } = require('../adapters');
+const { imageReducerService } = require('../main.js');
+const { appendSuffix } = require('../utils');
 
-const createFakeSqsMessage = (payload) => { Records: [{ body: payload }] };
+const createFakeSqsMessage = (payload) => ({ Records: [{ body: payload }] });
 
 describe('ImageReducerService', () => {
 
@@ -16,10 +17,10 @@ describe('ImageReducerService', () => {
             key: existingFileKey
         });
 
-        await ImageReducerService(EventParser.parse(sqsMessage), FileService, ImageReducer);
+        await imageReducerService(EventParser.parse(sqsMessage), FileService, ImageReducer);
 
         const reducedImageMetadata = await FileService.S3
-            .headObject({ bucket: realBucket, key: `${key}_reduced.${format}`}).promise();
+            .headObject({ bucket: realBucket, key: appendSuffix(existingFileKey, 'png') }).promise();
         expect(reducedImageMetadata).toBeDefined();
     });
 });

@@ -1,12 +1,12 @@
 const Path = require('path');
 const Fs = require('fs');
 const Sharp = require('sharp');
-const ImageReducer = require('../adapters/image-reducer.js');
+const ImageReducer = require('../../adapters/image-reducer.js');
 
-const BIG_IMAGE_PATH = Path.join(__dirname, './big-lambda.png');
-const SMALL_IMAGE_PATH_PNG = Path.join(__dirname, './small-lambda.png');
-const SMALL_IMAGE_PATH_WEBP = Path.join(__dirname, './small-lambda.webp');
-const SMALL_IMAGE_PATH_JPEF = Path.join(__dirname, './small-lambda.jpeg');
+const BIG_IMAGE_PATH = Path.join(__dirname, '../big-lambda.png');
+const SMALL_IMAGE_PATH_PNG = Path.join(__dirname, '../small-lambda.png');
+const SMALL_IMAGE_PATH_WEBP = Path.join(__dirname, '../small-lambda.webp');
+const SMALL_IMAGE_PATH_JPEF = Path.join(__dirname, '../small-lambda.jpeg');
 
 describe('ImageReducer.createTransformable()', () => {
 
