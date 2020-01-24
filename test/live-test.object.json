@@ -1,9 +1,0 @@
-{
-    "Records": [{
-        "body": {
-            "bucket": "<enter-existing-bucket-here>",
-            "key": "<enter-existing-key-here>",
-            "format": "png"
-        }
-    }]
-}

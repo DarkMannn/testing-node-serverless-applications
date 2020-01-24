@@ -29,7 +29,7 @@ package:
 
 functions:
   image-reducer-service:
-    handler: lambda.handler
+    handler: index.handler
     events:
       - sqs:
           arn: ${env:SQS_QUEUE_ARN}
