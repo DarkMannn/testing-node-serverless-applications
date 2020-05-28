@@ -4,4 +4,4 @@ This repository contains code for the article 'Testing Node Serverless Applicati
 
 If you want to upload this Lambda function to AWS, you must tweak the serverless.yml file according to your needs.
 
-
+Hope you find this repo useful!
